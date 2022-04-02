@@ -13,7 +13,7 @@ const Game = ({ gameData, playersData }) => {
         <Field>
           {data.map((player) => 
             <div>
-              <Player players={data} playerData={player} handleData={setData} />
+              <Player players={data} playerData={player} handleData={setData} shirtColor={gameData.shirtColor} />
             </div>
             )}
           </Field>

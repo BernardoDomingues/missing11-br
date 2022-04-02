@@ -4,7 +4,7 @@ import { HiOutlineCheck } from 'react-icons/hi';
 
 import Modal from "./Modal";
 
-const Player = ({ players, playerData, handleData }) => {
+const Player = ({ players, playerData, handleData, shirtColor }) => {
   const [isModalOpen, setIsModalOpen] = useState(false);
   const [inputData, setInputData] = useState('');
   const [attemptsLeft, setAttemptsLeft] = useState(playerData.attemptsLeft);
@@ -35,7 +35,7 @@ const Player = ({ players, playerData, handleData }) => {
 
   return (
     <>
-    <Container disabled={validadeButton()} onClick={() => setIsModalOpen(true)}>{playerData.hidden ? playerData.name.length : <CheckIcon />}</Container>
+    <Container shirtColor={shirtColor} disabled={validadeButton()} onClick={() => setIsModalOpen(true)}>{playerData.hidden ? playerData.name.length : <CheckIcon />}</Container>
     <PlayerPosition>{playerData.position}</PlayerPosition>
     {playerData.hidden ? <HiddenPlayerName>{playerData.name}</HiddenPlayerName> : <PlayerName>{playerData.name}</PlayerName>}
     <Modal visible={isModalOpen} onClose={() => setIsModalOpen(false)}>
@@ -61,7 +61,7 @@ const Container = styled.button`
   height: 35px;
   width: 35px;
   border-radius: 20px;
-  background: #54B942;
+  background: ${(props) => props.shirtColor};
   border: solid 2px #fff;
   color: #fff;
   margin: 15px;

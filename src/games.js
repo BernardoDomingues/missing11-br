@@ -1,7 +1,8 @@
 export const dailyChalange = {
   gameData: {
     game: 'Brasil 4 x 0 Bolívia - Eliminatórias da Copa do Mundo Qatar 2022',
-    date: '29/03/2022'
+    date: '29/03/2022',
+    shirtColor: '#54B942'
   },
   players: [
     {
@@ -87,7 +88,8 @@ export const dailyChalange = {
 export const chalangeGermany = {
   gameData: {
     game: 'Alemanha 8 x 0 Estônia - Eliminatórias da UEFA Euro 2020',
-    date: '11/06/2019'
+    date: '11/06/2019',
+    shirtColor: '#000000'
   },
   players: [
     {
@@ -173,7 +175,8 @@ export const chalangeGermany = {
 export const chalangeMadrid = {
   gameData: {
     game: 'Real Madrid 5 x 1 Légia Varsóvia - Fase de Grupos da Liga dos Campeões 16/17',
-    date: '18/10/2016'
+    date: '18/10/2016',
+    shirtColor: '#00519E'
   },
   players: [
     {
@@ -259,7 +262,8 @@ export const chalangeMadrid = {
 export const chalangeBarca = {
   gameData: {
     game: 'Barcelona 4 x 0 Mönchengladbach - Fase de Grupos da Liga dos Campeões 16/17',
-    date: '06/12/2016'
+    date: '06/12/2016',
+    shirtColor: '#A40047'
   },
   players: [
     {
