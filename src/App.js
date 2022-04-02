@@ -12,13 +12,13 @@ const App = () => {
     <Body>
       <Menu>
         <Title>Missing 11</Title>
-        <button onClick={() => setGameSelected(dailyChalange)}>Desafio Diário</button>
+        <button onClick={() => setGameSelected(dailyChalange)}>Desafio Diário - Fácil</button>
         <br />
-        <button onClick={() => setGameSelected(chalangeGermany)}>Desafio Alemanha</button>
+        <button onClick={() => setGameSelected(chalangeGermany)}>Desafio Alemanha - Médio</button>
         <br />
-        <button onClick={() => setGameSelected(chalangeMadrid)}>Desafio R.Madrid</button>
+        <button onClick={() => setGameSelected(chalangeMadrid)}>Desafio R.Madrid - Fácil</button>
         <br />
-        <button onClick={() => setGameSelected(chalangeBarca)}>Desafio Barça</button>
+        <button onClick={() => setGameSelected(chalangeBarca)}>Desafio Barça - Difícil</button>
       </Menu>
     </Body>
     :
