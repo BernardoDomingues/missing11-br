@@ -1,5 +1,6 @@
 import { useState } from "react";
 import styled from "styled-components";
+import { HiOutlineCheck } from 'react-icons/hi';
 
 import Modal from "./Modal";
 
@@ -28,7 +29,7 @@ const Player = ({ players, playerData, handleData }) => {
 
   return (
     <>
-    <Container disabled={validadeButton()} onClick={() => setIsModalOpen(true)}>{playerData.name.length}</Container>
+    <Container disabled={validadeButton()} onClick={() => setIsModalOpen(true)}>{playerData.hidden ? playerData.name.length : <CheckIcon />}</Container>
     {playerData.hidden ? <HiddenPlayerName>{playerData.name}</HiddenPlayerName> : <PlayerName>{playerData.name}</PlayerName>}
     <PlayerPosition>{playerData.position}</PlayerPosition>
     <Modal visible={isModalOpen} onClose={() => setIsModalOpen(false)}>
@@ -62,6 +63,10 @@ const Container = styled.button`
   :disabled {
     cursor: default;
   }
+`;
+
+const CheckIcon = styled(HiOutlineCheck)`
+  font-size: 20px;
 `;
 
 const HiddenPlayerName = styled.span`
