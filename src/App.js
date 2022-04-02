@@ -1,9 +1,7 @@
-import { useState } from "react";
-import styled from "styled-components";
-import Player from "./Player";
+import Game from "./Game";
 
 const App = () => {
-  const [data, setData] = useState([
+  const players = [
     {
       id: 0,
       name: 'alisson',
@@ -81,47 +79,14 @@ const App = () => {
       attemptsLeft: 5,
       hidden: true
     }
-  ]);
+  ];
 
   const gameData = {
     game: 'Brasil 4 x 0 Bolívia - Eliminatórias da Copa do Mundo Qatar 2022',
     date: '29/03/2022'
   };
 
-  return (
-    <>
-    <Header>{gameData.game} - {gameData.date}</Header>
-    <Container>
-      <Field>
-        {data.map((player) => 
-          <div>
-            <Player players={data} playerData={player} handleData={setData} />
-          </div>
-          )}
-        </Field>
-      </Container>
-    </>
-  );
+  return <Game gameData={gameData} playersData={players} />
 };
-
-const Header = styled.div`
-  text-align: center;
-  font-size: 20px;
-`;
-
-const Container = styled.div`
-  width: 100vw;
-  height: 100vh;
-  background: #6C7A89;
-  display: flex;
-  flex-direction: row;
-  justify-content: center;
-  align-items: center;
-`;
-
-const Field = styled.div`
-  background: #0F9D58;
-  width: 50%;
-`;
 
 export default App;
