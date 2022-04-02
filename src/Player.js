@@ -10,7 +10,7 @@ const Player = ({ players, playerData, handleData }) => {
 
   const checkAttempt = () => {
     const newData = players;
-    if (inputData === playerData.name) {
+    if (inputData.toLowerCase() === playerData.name) {
       newPlayerData.hidden = false;
       newData[playerData.id] = newPlayerData;
       handleData(newData);
@@ -22,12 +22,12 @@ const Player = ({ players, playerData, handleData }) => {
     }
   };
 
-  const validadeButton = () => newPlayerData.attemptsLeft === 0 || newPlayerData.hidden === false ? true : false
+  const validadeButton = () => newPlayerData.attemptsLeft < 1 || newPlayerData.hidden === false ? true : false
 
   return (
     <>
     <Container disabled={validadeButton()} onClick={() => setIsModalOpen(true)}>{newPlayerData.name.length}</Container>
-    {newPlayerData.hidden ? <PlayerName>{newPlayerData.name}</PlayerName> : <span>{newPlayerData.name}</span>}
+    {newPlayerData.hidden ? <HiddenPlayerName>{newPlayerData.name}</HiddenPlayerName> : <PlayerName>{newPlayerData.name}</PlayerName>}
     <PlayerPosition>{newPlayerData.position}</PlayerPosition>
     <Modal visible={isModalOpen} onClose={() => setIsModalOpen(false)}>
       <BodyModal>
@@ -62,8 +62,13 @@ const Container = styled.button`
   }
 `;
 
-const PlayerName = styled.span`
+const HiddenPlayerName = styled.span`
   -webkit-text-security: disc !important;
+  color: #fff;
+`;
+
+const PlayerName = styled.a`
+  text-transform: capitalize;
   color: #fff;
 `;
 

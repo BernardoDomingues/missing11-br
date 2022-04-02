@@ -6,77 +6,77 @@ const App = () => {
   const [data, setData] = useState([
     {
       id: 0,
-      name: 'Alisson',
+      name: 'alisson',
       position: 'GOL',
       attemptsLeft: 5,
       hidden: true
     },
     {
       id: 1,
-      name: 'Daniel Alves',
+      name: 'daniel alves',
       position: 'LD',
       attemptsLeft: 5,
       hidden: true
     },
     {
       id: 2,
-      name: 'Marquinhos',
+      name: 'marquinhos',
       position: 'ZAG',
       attemptsLeft: 5,
       hidden: true
     },
     {
       id: 3,
-      name: 'Éder Militão',
+      name: 'eder militao',
       position: 'ZAG',
       attemptsLeft: 5,
       hidden: true
     },
     {
       id: 4,
-      name: 'Alex Telles',
+      name: 'alex telles',
       position: 'LE',
       attemptsLeft: 5,
       hidden: true
     },
     {
       id: 5,
-      name: 'Fabinho',
+      name: 'fabinho',
       position: 'VOL',
       attemptsLeft: 5,
       hidden: true
     },
     {
       id: 6,
-      name: 'Bruno Guimarães',
+      name: 'bruno guimaraes',
       position: 'VOL',
       attemptsLeft: 5,
       hidden: true
     },
     {
       id: 7,
-      name: 'Antony',
+      name: 'antony',
       position: 'PD',
       attemptsLeft: 5,
       hidden: true
     },
     {
       id: 8,
-      name: 'Lucas Paquetá',
+      name: 'lucas paqueta',
       position: 'MEI',
       attemptsLeft: 5,
       hidden: true
     },
     {
       id: 9,
-      name: 'Philipe Coutinho',
+      name: 'phillipe coutinho',
       position: 'PE',
       attemptsLeft: 5,
       hidden: true
     },
     {
       id: 10,
-      name: 'Richarlison',
+      name: 'richarlison',
       position: 'ATA',
       attemptsLeft: 5,
       hidden: true
