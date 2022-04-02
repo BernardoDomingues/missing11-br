@@ -7,26 +7,20 @@ const Game = ({ gameData, playersData }) => {
   const [data, setData] = useState(playersData);
 
   return (
-    <>
-    <Header>{gameData.game} - {gameData.date}</Header>
     <Container>
-      <Field>
-        {data.map((player) => 
-          <div>
-            <Player players={data} playerData={player} handleData={setData} />
-          </div>
-          )}
-        </Field>
-      </Container>
-    </>
+      <div>
+        <Header>{gameData.game} - {gameData.date}</Header>
+        <Field>
+          {data.map((player) => 
+            <div>
+              <Player players={data} playerData={player} handleData={setData} />
+            </div>
+            )}
+          </Field>
+        </div>
+    </Container>
   )
 };
-
-
-const Header = styled.div`
-  text-align: center;
-  font-size: 20px;
-`;
 
 const Container = styled.div`
   width: 100vw;
@@ -36,11 +30,16 @@ const Container = styled.div`
   flex-direction: row;
   justify-content: center;
   align-items: center;
+`
+
+const Header = styled.div`
+  text-align: center;
+  font-size: 20px;
+  color: #fff;
 `;
 
 const Field = styled.div`
   background: #0F9D58;
-  width: 50%;
 `;
 
 
