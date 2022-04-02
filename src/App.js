@@ -2,7 +2,7 @@ import { useState } from "react";
 import styled from "styled-components";
 import Game from "./Game";
 
-import { dailyChalange } from "./games";
+import { dailyChalange, chalangeGermany, chalangeMadrid, chalangeBarca } from "./games";
 
 const App = () => {
   const [gameSelected, setGameSelected] = useState({gameData: 'default', players: []});
@@ -13,6 +13,12 @@ const App = () => {
       <Menu>
         <Title>Missing 11</Title>
         <button onClick={() => setGameSelected(dailyChalange)}>Desafio Diário</button>
+        <br />
+        <button onClick={() => setGameSelected(chalangeGermany)}>Desafio Alemanha</button>
+        <br />
+        <button onClick={() => setGameSelected(chalangeMadrid)}>Desafio R.Madrid</button>
+        <br />
+        <button onClick={() => setGameSelected(chalangeBarca)}>Desafio Barça</button>
       </Menu>
     </Body>
     :
