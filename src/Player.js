@@ -25,19 +25,29 @@ const Player = ({ players, playerData, handleData }) => {
     }
   };
 
-  const validadeButton = () => attemptsLeft < 1 || playerData.hidden === false ? true : false
+  const validadeButton = () => attemptsLeft < 1 || playerData.hidden === false ? true : false;
+
+  const handleKeyDown = (event) => {
+    if (event.key === 'Enter') {
+      checkAttempt();
+    }
+  };
 
   return (
     <>
     <Container disabled={validadeButton()} onClick={() => setIsModalOpen(true)}>{playerData.hidden ? playerData.name.length : <CheckIcon />}</Container>
-    {playerData.hidden ? <HiddenPlayerName>{playerData.name}</HiddenPlayerName> : <PlayerName>{playerData.name}</PlayerName>}
     <PlayerPosition>{playerData.position}</PlayerPosition>
+    {playerData.hidden ? <HiddenPlayerName>{playerData.name}</HiddenPlayerName> : <PlayerName>{playerData.name}</PlayerName>}
     <Modal visible={isModalOpen} onClose={() => setIsModalOpen(false)}>
       <BodyModal>
         <div>
           Tentativas Restantes: {attemptsLeft}
         </div>
-        <input type="text" onChange={(event) => setInputData(event.target.value)}/>
+        <input
+          type="text"
+          onChange={(event) => setInputData(event.target.value)}
+          onKeyDown={handleKeyDown}
+        />
         <div>
           <button disabled={validadeButton()} onClick={() => checkAttempt()}>Enviar</button>
         </div>
@@ -52,7 +62,7 @@ const Container = styled.button`
   width: 35px;
   border-radius: 20px;
   background: #54B942;
-  border: #fff;
+  border: solid 2px #fff;
   color: #fff;
   margin: 15px;
 
@@ -80,7 +90,7 @@ const PlayerName = styled.a`
 `;
 
 const PlayerPosition = styled.span`
-  margin-left: 10px;
+  margin-right: 10px;
   color: #fff;
 `;
 

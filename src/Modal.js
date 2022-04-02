@@ -1,8 +1,22 @@
-import React from "react";
+import { useEffect } from "react";
 import styled from "styled-components";
 import { IoIosClose } from "react-icons/io";
 
-const Modal = ({ children, visible, onClose }) =>
+const Modal = ({ children, visible, onClose }) => {
+  useEffect(() => {
+    const handleEsc = (event) => {
+      if (event.keyCode === 27) {
+        onClose();
+      }
+    };
+    window.addEventListener('keydown', handleEsc);
+
+    return () => {
+      window.removeEventListener('keydown', handleEsc);
+    };
+  });
+
+  return (
   visible && (
     <>
       <OutsideModal onClick={() => onClose()}/>
@@ -17,7 +31,10 @@ const Modal = ({ children, visible, onClose }) =>
         {children}
       </ModalWindow>
     </>
-  );
+    )
+  )
+};
+
 
 const OutsideModal = styled.div`
   position: fixed;
